@@ -58,6 +58,7 @@ def do_insert(force=False):
         ) VALUES
         """ + ",".join(values_to_insert)
         cursor.execute(insert_sql)
+        connection.commit()
         values_to_insert = []
         insertions = 0
 def insert_line(data):
